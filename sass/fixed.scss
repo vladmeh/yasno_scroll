@@ -1,0 +1,48 @@
+.fixed-head{
+  position: fixed;
+  top: 0;
+  z-index: 10000;
+  width: 100%;
+  overflow: hidden;
+  padding: 23px 0;
+  text-align: center;
+  .pageTop{
+    cursor: pointer;
+  }
+}
+.l-section{
+  .l-subsection{
+    .f-subsection-h{
+      position: fixed;
+      top: 94px;
+      width: 100%;
+      text-align: center;
+      z-index: 10;
+      background-color: rgba(255, 255, 255, .8);
+      h4{
+        margin-top: 43px;
+      }
+    }
+  }
+}
+
+.f-subsection-h{
+  &.citata{
+    padding: 43px 0;
+  }
+}
+
+.box-blue .f-subsection-h{
+  background-color: rgba(22, 31, 50, .9) !important;
+}
+.box-gray .f-subsection-h{
+  background-color: rgba(76, 80, 93, .9) !important;
+}
+.box-orange .f-subsection-h{
+  background-color: rgba(255, 157, 51, .9) !important;
+}
+.paralax-citate{
+  position: fixed;
+  top: 94px;
+  width: 100%;
+}
