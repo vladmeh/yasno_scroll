@@ -1,65 +1,54 @@
-$(function() {
-  var win = jQuery(window),
-      sections = [
-          '#what-we-do',
-          '#nashi-proekty',
-          '#vsyo-chto-vy-hoteli-znat',
-          '#klienty',
-          '#po-vsem-voprosam'
-        ],
-      allMods = jQuery(sections);
+/**
+ * cbpAnimatedHeader.js v1.0.0
+ * http://www.codrops.com
+ *
+ * Licensed under the MIT license.
+ * http://www.opensource.org/licenses/mit-license.php
+ *
+ * Copyright 2013, Codrops
+ * http://www.codrops.com
+ */
+var cbpAnimatedHeader = (function() {
 
-  /*$.fn.visible = function(partial) {
+  var docElem = document.documentElement,
+    el = document.querySelector( '.scrollBoxed' ),
+    sections = el.querySelectorAll('.l-section'),
+    didScroll = false,
+    changeHeaderOn = 0;
 
-      var $t            = $(this),
-          $w            = $(window),
-          viewTop       = $w.scrollTop(),
-          viewBottom    = viewTop + $w.height(),
-          _top          = $t.offset().top,
-          _bottom       = _top + $t.height(),
-          compareTop    = partial === true ? _bottom : _top,
-          compareBottom = partial === true ? _top : _bottom;
-
-    //return ((compareBottom <= viewBottom) && (compareTop >= viewTop));
-    return (_top);
-
-  };*/
-
-  /*allMods.each(function(i, el) {
-    var el = jQuery(el);
-    if (el.visible(true)) {
-      el.addClass("already-visible");
-    }
-  });*/
-  var box = $('#nashi-proekty'),
-      box_t = box.offset().top,
-      box_prev = box.prev(),
-      box_prev_t = box_prev.height(),
-      point = 0,
-      scrollPoint,
-      activeScroll = false;
-  console.log(box_prev_t);
-
-  win.scroll(function(e) {
-    scrollPoint = box_t - (win.scrollTop() + box_prev_t);
-    if (point !== null && point >= scrollPoint){
-      activeScroll = true;
-    }
-    //console.log();
-    //console.log(win.scrollTop());
-    /*allMods.each(function(i, el) {
-      var $el = jQuery(el);
-      console.log($el.visible());
-      if (el.visible(true)) {
-        el.addClass("come-in");
+  function init() {
+    window.addEventListener( 'scroll', function( event ) {
+      if( !didScroll ) {
+        didScroll = true;
+        $.each(sections, function(key, val){
+          setTimeout( scrollPage(val), 250 );
+        });
       }
-    });*/
-
-  });
-  if (activeScroll === true){
-    $("html, body").animate({scrollTop:box_t}, '500', 'swing');
-    activeScroll = false;
+    }, false );
   }
 
-});
+  function scrollPage(section) {
+    var section = section,
+        sy = scrollY(),
+        ps = posSection(section);
+        point = ps - sy;
+    if ( point <= changeHeaderOn ) {
+      classie.add( section, 'hide-section' );
+      //$("html, body").animate({ top: -($(section).next().offset().top)+ 'px' }, 1000, 'swing');
+    }
+    else {
+      classie.remove( section, 'hide-section' );
+    }
+    didScroll = false;
+  }
 
+  function scrollY() {
+    return window.pageYOffset || docElem.scrollTop;
+  }
+
+  function posSection(section){
+    return section.offsetTop;
+  }
+  init();
+
+})();

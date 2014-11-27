@@ -7,3 +7,4 @@ fire_app_log.txt
 *.sublime-workspace
 ~*
 robots.txt
+vendor/

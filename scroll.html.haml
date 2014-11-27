@@ -5,11 +5,10 @@
     %title= @title || "Dendor Valve Industrial"
     %meta{'http-equiv' => 'X-UA-Compatible', :content => 'IE=edge,chrome=1'}/
     = stylesheet_link_tag "screen", :media=>"screen, projection"
-    = stylesheet_link_tag "stile", :media=>"screen, projection"
+    = stylesheet_link_tag "style", :media=>"screen, projection"
     = stylesheet_link_tag "fixed", :media=>"screen, projection"
-    = javascript_include_tag "//code.jquery.com/jquery-1.11.1.js"
+    = javascript_include_tag "//code.jquery.com/jquery-1.11.1.min.js"
     = javascript_include_tag "//code.jquery.com/jquery-migrate-1.2.1.min.js"
-    = javascript_include_tag "scrollPageBox"
     /[if IE]
       = stylesheet_link_tag "ie", :media=>"all"
   %body
@@ -27,6 +26,7 @@
                 Мы умеем ставить задачи исследователям, программистам,
                 %br/
                 дизайнерам, лоббистам, авторам
+    .scrollBoxed
       %section#what-we-do.l-section
         .l-subsection
           .l-subsection-h
@@ -35,7 +35,7 @@
               %p= lorem_paragraph
               %p= lorem_paragraph
               %p= lorem_paragraph
-      %section#esli-vy-hotite-byt-dizajnerom.l-section.box-blue
+      %section#esli-vy-hotite-byt-dizajnerom.l-section.box-blue.actionScroll
         .l-subsection
           .l-subsection-h
             .l-subsection-hh.g-html.i-cf
@@ -73,3 +73,5 @@
               %p= lorem_paragraph
               %p= lorem_paragraph
               %p= lorem_paragraph
+    = javascript_include_tag "classie"
+    = javascript_include_tag "scrollPageBox"
