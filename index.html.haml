@@ -9,7 +9,7 @@
     = stylesheet_link_tag "fixed", :media=>"screen, projection"
     = javascript_include_tag "//code.jquery.com/jquery-1.11.1.min.js"
     = javascript_include_tag "//code.jquery.com/jquery-migrate-1.2.1.min.js"
-    = javascript_include_tag "fixedHeadSections"
+    = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"
     /[if IE]
       = stylesheet_link_tag "ie", :media=>"all"
   %body
@@ -27,27 +27,23 @@
                 Мы умеем ставить задачи исследователям, программистам,
                 %br/
                 дизайнерам, лоббистам, авторам
-      //.fixed-header{:style=> "display:none;"}
+    .scrollBoxed
       %section#what-we-do.l-section
         .l-subsection
-          .f-subsection-h
-            //%h4 Заголовок блока
           .l-subsection-h
             .l-subsection-hh.g-html.i-cf
               %h4 Заголовок первого блока
               %p= lorem_paragraph
               %p= lorem_paragraph
               %p= lorem_paragraph
-      %section#esli-vy-hotite-byt-dizajnerom.l-section.box-blue
+      %section#esli-vy-hotite-byt-dizajnerom.l-section.box-blue.actionScroll
         .l-subsection
-          .f-subsection-h
           .l-subsection-h
             .l-subsection-hh.g-html.i-cf
               %p= lorem_paragraph
               %p= lorem_paragraph
       %section#nashi-proekty.l-section
         .l-subsection
-          .f-subsection-h
           .l-subsection-h
             .l-subsection-hh.g-html.i-cf
               %h4 Заголовок второго блока
@@ -56,7 +52,6 @@
               %p= lorem_paragraph
       %section#vsyo-chto-vy-hoteli-znat.l-section.box-gray
         .l-subsection
-          .f-subsection-h
           .l-subsection-h
             .l-subsection-hh.g-html.i-cf
               %h4 Заголовок третьего блока
@@ -65,7 +60,6 @@
               %p= lorem_paragraph
       %section#klienty.l-section.box-orange
         .l-subsection
-          .f-subsection-h
           .l-subsection-h
             .l-subsection-hh.g-html.i-cf
               %h4 Заголовок четвертого блока
@@ -74,10 +68,10 @@
               %p= lorem_paragraph
       %section#po-vsem-voprosam.l-section.box-gray
         .l-subsection
-          .f-subsection-h
           .l-subsection-h
             .l-subsection-hh.g-html.i-cf
               %h4 Заголовок пятого блока
               %p= lorem_paragraph
               %p= lorem_paragraph
               %p= lorem_paragraph
+    = javascript_include_tag "jquery.scrollTo"
