@@ -40,7 +40,7 @@ $(function() {
               //up
           case 38:
           case 33:
-              next = (last == 0) ? 0 : last - 1;
+              next = (last === 0) ? 0 : last - 1;
               break;
 
               //down
@@ -83,7 +83,7 @@ $(function() {
             break;
 
           case true:
-            next = (last == 0) ? 0 : last - 1;
+            next = (last === 0) ? 0 : last - 1;
             break;
         }
         // Set Next Chapter Active
@@ -116,15 +116,16 @@ $(function() {
         if (typeof callback == 'function') { callback.call(this); }
       });
     });
-  }
+  };
 
   // http://www.manhunter.ru/webmaster/199_obrabotka_kolesika_mishi_na_javascript.html
   $.fn.bindWheelEvent = function(callback) {
     if(!$.isFunction(callback)) { return this; }
-    if(this.length == 0) { return this; }
+    if(this.length === 0) { return this; }
     var jsThis = this.get(0);
     var normalizedCallback = function(e) {
-      if(!e) { var e = window.event; }
+      if(!e) { e = window.event; }
+
       e.cancelDefaultAction = function() {
         if (this.stopPropagation) {
             this.stopPropagation();
@@ -136,14 +137,15 @@ $(function() {
         this.cancel       = true;
         this.returnValue  = false;
         return false;
-      }
+      };
       // Получить значение поворота колесика мыши
       var wheelData = e.detail ? e.detail * -1 : e.wheelDelta / 40;
       // В движке WebKit возвращается значение в 100 раз больше
       if (Math.abs(wheelData)>100) { wheelData=Math.round(wheelData/100); }
       e.wheelData = wheelData;
       return callback.call(jsThis, e);
-    }
+    };
+
     if (jsThis.addEventListener) {
       // Событие вращения колесика для Mozilla
       jsThis.addEventListener('DOMMouseScroll', normalizedCallback, false);
