@@ -14,6 +14,9 @@
       = stylesheet_link_tag "ie", :media=>"all"
   %body
     .main
+      /
+      .fixed-head.box-orange#header-fixed
+        =image_tag('http://yasno.co/wp-content/uploads/2014/11/logo-horizontal.png', :width=>'352px', :class=>'pageTop')
       %section#header.l-section.box-orange
         .l-subsection
           .l-subsection-h
@@ -28,6 +31,7 @@
                 %br/
                 дизайнерам, лоббистам, авторам
     .scrollBoxed
+      %section.l-section
       %section#what-we-do.l-section
         .l-subsection
           .l-subsection-h
@@ -36,7 +40,7 @@
               %p= lorem_paragraph
               %p= lorem_paragraph
               %p= lorem_paragraph
-      %section#esli-vy-hotite-byt-dizajnerom.l-section.box-blue.actionScroll
+      %section#esli-vy-hotite-byt-dizajnerom.l-section.box-blue
         .l-subsection
           .l-subsection-h
             .l-subsection-hh.g-html.i-cf
@@ -74,4 +78,7 @@
               %p= lorem_paragraph
               %p= lorem_paragraph
               %p= lorem_paragraph
+    = javascript_include_tag "jquery.bindWheelEvent"
     = javascript_include_tag "jquery.scrollTo"
+    = javascript_include_tag "vm.sectionScroll.v0.0.2"
+    =# javascript_include_tag "fixedHeadSections"

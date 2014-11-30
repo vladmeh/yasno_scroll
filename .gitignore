@@ -1,4 +1,5 @@
 .sass-cache/
+.bowerrc
 build_*/
 stylesheets/
 .htaccess

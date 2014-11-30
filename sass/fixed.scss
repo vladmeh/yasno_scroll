@@ -1,4 +1,8 @@
+@import "animate/animate.scss";
+@import "animate/_properties";
+
 .fixed-head{
+  display: none;
   position: fixed;
   top: 0;
   z-index: 10000;
@@ -8,6 +12,10 @@
   text-align: center;
   .pageTop{
     cursor: pointer;
+  }
+  &.box-orange {
+    background-color: rgb(255,157,51);
+    color: #fff;
   }
 }
 .l-section{
@@ -45,4 +53,7 @@
   position: fixed;
   top: 94px;
   width: 100%;
+}
+.empty{
+  height: 262px;
 }
