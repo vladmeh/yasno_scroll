@@ -10,14 +10,12 @@
     = javascript_include_tag "//code.jquery.com/jquery-1.11.1.min.js"
     = javascript_include_tag "//code.jquery.com/jquery-migrate-1.2.1.min.js"
     = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"
-    /[if IE]
-      = stylesheet_link_tag "ie", :media=>"all"
   %body
     .main
       /
-      .fixed-head.box-orange#header-fixed
+      .fixed-head.animate-header.box-orange#header-fixed
         =image_tag('http://yasno.co/wp-content/uploads/2014/11/logo-horizontal.png', :width=>'352px', :class=>'pageTop')
-      %section#header.l-section.box-orange
+      %section#header.l-section.box-orange.animate-header
         .l-subsection
           .l-subsection-h
             .l-subsection-hh.g-html.i-cf
@@ -31,7 +29,7 @@
                 %br/
                 дизайнерам, лоббистам, авторам
     .scrollBoxed
-      %section.l-section
+      .l-section.box-orange
       %section#what-we-do.l-section
         .l-subsection
           .l-subsection-h

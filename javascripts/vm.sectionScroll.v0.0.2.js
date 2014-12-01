@@ -18,9 +18,9 @@ $(function() {
 
     // set header fixed scroll down window
     $(window).on('scroll', function(){
-      if ($(window).scrollTop() > 150){
+      if ($(window).scrollTop() > 168){
         $header.hide();
-        $header_fixed.fadeIn(200);
+        $header_fixed.show();
         $chapters.eq(0).addClass('empty');
       }
       else {
@@ -95,8 +95,8 @@ $(function() {
         }
         // Set Next Chapter Active
         $chapters.eq(next).addClass('active');
-        console.log(last);
-        console.log(next);
+        //console.log(last);
+        //console.log(next);
         if (next > 0){
           $body.scrollTo($chScrollPositions[next], {duration:'easeOutQuart', offsetTop: 93});
         }
