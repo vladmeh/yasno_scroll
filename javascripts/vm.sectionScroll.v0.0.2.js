@@ -18,7 +18,9 @@ $(function() {
 
     // set header fixed scroll down window
     $(window).on('scroll', function(){
-      if ($(window).scrollTop() > 168){
+      var winScrollTop = $(window).scrollTop();
+      console.log(winScrollTop);
+      if ($(window).scrollTop() > 50){
         $header.hide();
         $header_fixed.show();
         $chapters.eq(0).addClass('empty');
